@@ -1,16 +1,16 @@
 package PageObjectModel;
 
-import Baseclass.baseclass;
+import Baseclass.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class login_page extends baseclass {
+public class LoginPage extends BaseClass {
     private WebDriver driver;
 
     //constructor
 
-    public login_page(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver=driver;
     }
 
