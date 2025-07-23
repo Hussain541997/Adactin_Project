@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
+import utils.ConfigReader;
 
 public class loginSteps {
 
@@ -21,8 +22,8 @@ public class loginSteps {
     @Given("User launches the adactin hotel booking site")
     public void user_launches_the_adactin_hotel_booking_site() {
         // Launch browser and open URL
-        driver = BaseClass.launchBrowser("chrome");
-        BaseClass.openUrl("https://adactinhotelapp.com/HotelAppBuild2/");
+//        driver = BaseClass.launchBrowser("chrome");
+//        BaseClass.openUrl("https://adactinhotelapp.com/HotelAppBuild2/");
 
         // Initialize Page Object
         loginPage = new LoginPage(driver);
@@ -30,8 +31,8 @@ public class loginSteps {
 
     @When("User enters the login username {string} and password {string}")
     public void user_enters_the_login_username_and_password(String username, String password) {
-        loginPage.enterUserName("Hussain54");
-        loginPage.enterPassword("Hussain@65");
+        username = ConfigReader.get("username");
+        password = ConfigReader.get("password");
     }
 
     @When("User clicks the login button")
